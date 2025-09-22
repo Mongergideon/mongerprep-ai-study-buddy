@@ -2,29 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Mongerprep Design System - All colors MUST be HSL */
+/* Premium Mongerprep Design System - Ultra Luxury UI */
 
 @layer base {
   :root {
-    /* Brand Colors */
+    /* Premium Brand Colors */
     --wine-primary: 340 42% 26%;  /* #5B2333 */
-    --vanilla-accent: 52 82% 83%;  /* #F7E6A9 */
-    --deep-navy: 217 66% 13%;  /* #0B1B32 */
-    --rose-taupe: 340 15% 47%;  /* #8A6674 */
-    --white-smoke: 24 23% 96%;  /* #F7F4F3 */
+    --wine-light: 340 42% 35%;    /* Lighter wine */
+    --wine-dark: 340 42% 18%;     /* Darker wine */
+    --vanilla-accent: 52 82% 83%; /* #F7E6A9 */
+    --vanilla-light: 52 82% 90%;  /* Lighter vanilla */
+    --deep-navy: 217 66% 13%;     /* #0B1B32 */
+    --navy-light: 217 66% 20%;    /* Lighter navy */
+    --rose-taupe: 340 15% 47%;    /* #8A6674 */
+    --white-smoke: 24 23% 96%;    /* #F7F4F3 */
+    --pure-white: 0 0% 100%;      /* Pure white */
+    --glass-white: 0 0% 100% / 0.1; /* Glass effect */
     
-    /* Semantic Design Tokens */
+    /* Premium Semantic Design Tokens */
     --background: var(--white-smoke);
     --foreground: var(--deep-navy);
 
-    --card: 0 0% 100%;
+    --card: var(--pure-white);
     --card-foreground: var(--deep-navy);
 
-    --popover: 0 0% 100%;
+    --popover: var(--pure-white);
     --popover-foreground: var(--deep-navy);
 
     --primary: var(--wine-primary);
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: var(--pure-white);
 
     --secondary: var(--white-smoke);
     --secondary-foreground: var(--deep-navy);
@@ -42,19 +48,29 @@
     --input: 340 20% 95%;
     --ring: var(--wine-primary);
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--wine-primary)), hsl(340, 42%, 35%));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--white-smoke)), hsl(0, 0%, 98%));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--vanilla-accent)), hsl(52, 70%, 88%));
+    /* Premium Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--wine-primary)) 0%, hsl(var(--wine-light)) 50%, hsl(var(--wine-dark)) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(var(--wine-primary)) 0%, hsl(var(--navy-light)) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--white-smoke)) 0%, hsl(var(--pure-white)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--vanilla-accent)) 0%, hsl(var(--vanilla-light)) 100%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(var(--wine-primary)) 0px, transparent 50%), 
+                     radial-gradient(at 80% 0%, hsl(var(--vanilla-accent)) 0px, transparent 50%), 
+                     radial-gradient(at 0% 50%, hsl(var(--wine-light)) 0px, transparent 50%);
     
-    /* Shadows */
-    --shadow-soft: 0 6px 18px rgba(11, 27, 50, 0.06);
-    --shadow-hover: 0 12px 24px rgba(11, 27, 50, 0.1);
+    /* Premium Shadows & Effects */
+    --shadow-soft: 0 4px 24px rgba(11, 27, 50, 0.08);
+    --shadow-hover: 0 8px 40px rgba(11, 27, 50, 0.12);
+    --shadow-premium: 0 20px 60px rgba(91, 35, 51, 0.15);
+    --shadow-glass: 0 8px 32px rgba(255, 255, 255, 0.1);
+    --shadow-glow: 0 0 40px rgba(91, 35, 51, 0.2);
     
-    /* Animation */
-    --transition-smooth: all 0.16s ease-out;
+    /* Premium Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-premium: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
@@ -102,6 +118,36 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    background: linear-gradient(135deg, hsl(var(--white-smoke)) 0%, hsl(var(--pure-white)) 100%);
+  }
+
+  /* Premium Utility Classes */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hover-glow {
+    transition: var(--transition-premium);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .premium-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-premium);
   }
 }

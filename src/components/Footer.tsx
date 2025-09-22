@@ -19,16 +19,17 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-navy text-white py-16">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gradient-premium text-white py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-mesh opacity-10"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-3">
               <img 
                 src={mongerPrepLogo} 
                 alt="Mongerprep logo" 
-                className="h-8 w-auto brightness-0 invert"
+                className="h-16 w-auto brightness-0 invert transition-all duration-300 hover:scale-110"
               />
             </div>
             <p className="text-gray-300 mb-6 max-w-md">

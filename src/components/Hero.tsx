@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Play, Star, Users, Trophy, Zap } from "lucide-react";
 import phoneMockup from "@/assets/phone-mockup-updated.png";
-import heroBackground from "@/assets/hero-background.png";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -9,72 +9,148 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
-      {/* Animated Background */}
-      <div 
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `url(${heroBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        {/* Floating particles */}
-        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-vanilla rounded-full animate-particle-float" />
-        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-wine rounded-full animate-particle-float delay-1000" />
-        <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-vanilla rounded-full animate-particle-float delay-2000" />
-        <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-wine rounded-full animate-particle-float delay-500" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-mesh">
+      {/* Premium Background Elements */}
+      <div className="absolute inset-0">
+        {/* Animated Gradient Orbs */}
+        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-hero rounded-full opacity-20 blur-3xl animate-float-slow"></div>
+        <div className="absolute bottom-32 right-32 w-96 h-96 bg-gradient-accent rounded-full opacity-15 blur-3xl animate-float delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-premium rounded-full opacity-10 blur-3xl animate-gradient-shift"></div>
+        
+        {/* Floating Particles */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/30 rounded-full animate-particle-float"></div>
+        <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-accent/40 rounded-full animate-particle-float delay-500"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-primary/50 rounded-full animate-particle-float delay-1000"></div>
+        <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-accent/35 rounded-full animate-particle-float delay-1500"></div>
+        
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDYwIDAgTCAwIDAgMCA2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
       </div>
-      
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+      <div className="container mx-auto px-4 py-32 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content Column */}
-          <div className="text-center lg:text-left animate-fade-in">
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Mongerprep — Your{" "}
-              <span className="bg-gradient-hero bg-clip-text text-transparent">
-                AI-Powered Study Partner
-              </span>
-            </h1>
-            
-            <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-xl">
-              Study offline. Learn with AI. Prepare for JAMB, WAEC & Post-UTME—anytime, anywhere.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
+          <div className="text-center lg:text-left space-y-8 animate-fade-in-up">
+            {/* Premium Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-glass backdrop-blur-md rounded-full border border-white/20 shadow-glass animate-scale-in">
+              <Star className="w-4 h-4 text-accent" />
+              <span className="text-sm font-medium text-foreground">Nigeria's #1 AI Study Platform</span>
+            </div>
+
+            {/* Main Headline */}
+            <div className="space-y-4">
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+                <span className="block text-gradient animate-fade-in">Mongerprep</span>
+                <span className="block text-foreground/90 animate-fade-in delay-200">Your AI-Powered</span>
+                <span className="block text-foreground/90 animate-fade-in delay-400">Study Partner</span>
+              </h1>
+              
+              <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl animate-fade-in delay-600">
+                Study offline. Learn with AI. Prepare for <span className="text-primary font-semibold">JAMB</span>, <span className="text-primary font-semibold">WAEC</span> & <span className="text-primary font-semibold">Post-UTME</span>—anytime, anywhere.
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start animate-fade-in delay-800">
               <Button 
                 size="lg"
                 onClick={() => window.open('https://app.cbtmanager.mongergideontechnology.name.ng/', '_blank')}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-6"
+                className="group bg-gradient-hero hover:bg-gradient-premium text-primary-foreground shadow-premium hover:shadow-glow transition-all duration-500 hover:-translate-y-2 text-lg px-10 py-6 rounded-2xl font-bold hover-glow animate-glow-pulse"
               >
                 Download App
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
+              
               <Button 
                 variant="outline" 
                 size="lg"
                 onClick={() => scrollToSection('features')}
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-6"
+                className="group glass-effect border-white/30 text-foreground hover:text-primary hover:border-primary/50 shadow-glass hover:shadow-premium transition-all duration-500 hover:-translate-y-1 text-lg px-10 py-6 rounded-2xl font-semibold"
               >
+                <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                 See Features
               </Button>
             </div>
-            
-            <p className="text-sm text-muted-foreground">
-              3-day free trial on all paid plans • Secure offline PIN login
-            </p>
+
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-8 pt-6 text-muted-foreground/80 animate-fade-in delay-1000">
+              <div className="flex items-center gap-2">
+                <Users className="w-5 h-5 text-primary" />
+                <span className="text-sm font-medium">50,000+ Students</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Trophy className="w-5 h-5 text-accent" />
+                <span className="text-sm font-medium">95% Success Rate</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Zap className="w-5 h-5 text-primary" />
+                <span className="text-sm font-medium">AI-Powered</span>
+              </div>
+            </div>
+
+            {/* Micro-copy */}
+            <div className="text-sm text-muted-foreground space-y-1 animate-fade-in delay-1200">
+              <p className="flex items-center justify-center lg:justify-start gap-2">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                3-day free trial on all paid plans
+              </p>
+              <p className="flex items-center justify-center lg:justify-start gap-2">
+                <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse delay-500"></span>
+                Secure offline PIN login
+              </p>
+            </div>
           </div>
-          
+
           {/* Phone Mockup Column */}
-          <div className="flex justify-center lg:justify-end animate-float">
+          <div className="relative flex justify-center animate-slide-in-right">
+            {/* Phone Container with Premium Effects */}
             <div className="relative">
-              <img 
-                src={phoneMockup}
-                alt="Mongerprep app dashboard showing AI study features"
-                className="max-w-sm w-full h-auto drop-shadow-2xl"
-              />
+              {/* Glow Effect Behind Phone */}
+              <div className="absolute inset-0 bg-gradient-hero rounded-[3rem] opacity-20 blur-2xl scale-110 animate-glow-pulse"></div>
+              
+              {/* Premium Frame */}
+              <div className="relative premium-card rounded-[3rem] p-2 animate-float">
+                <img 
+                  src={phoneMockup} 
+                  alt="Mongerprep app dashboard showing personalized study interface" 
+                  className="w-full max-w-sm mx-auto rounded-[2.5rem] shadow-premium"
+                />
+              </div>
+
+              {/* Floating Feature Cards */}
+              <div className="absolute -top-8 -left-8 glass-effect p-4 rounded-2xl shadow-glass animate-float delay-500">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-hero rounded-xl flex items-center justify-center">
+                    <Star className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">AI Tutor</p>
+                    <p className="text-xs text-muted-foreground">24/7 Available</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -bottom-8 -right-8 glass-effect p-4 rounded-2xl shadow-glass animate-float delay-1000">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-accent rounded-xl flex items-center justify-center">
+                    <Trophy className="w-5 h-5 text-accent-foreground" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Offline Mode</p>
+                    <p className="text-xs text-muted-foreground">Study Anywhere</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Bottom Wave Divider */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg className="w-full h-24 text-background" viewBox="0 0 1440 320" fill="currentColor">
+          <path d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
       </div>
     </section>
   );
