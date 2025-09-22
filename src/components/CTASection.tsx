@@ -21,24 +21,25 @@ const CTASection = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
-          {/* Google Play Button */}
+          {/* App Download Button */}
           <Button 
+            onClick={() => window.open('https://app.cbtmanager.mongergideontechnology.name.ng/', '_blank')}
             size="lg"
-            variant="secondary"
             className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 px-8 py-6 text-lg min-w-[200px]"
           >
             <Smartphone className="w-5 h-5 mr-2" />
-            Google Play
+            Download App
           </Button>
           
-          {/* App Store Button */}
+          {/* Alternative CTA */}
           <Button 
+            onClick={() => window.open('https://app.cbtmanager.mongergideontechnology.name.ng/', '_blank')}
             size="lg"
             variant="secondary"
             className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 px-8 py-6 text-lg min-w-[200px]"
           >
             <Download className="w-5 h-5 mr-2" />
-            App Store
+            Start Free Trial
           </Button>
         </div>
         

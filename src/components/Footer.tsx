@@ -123,17 +123,13 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-gray-300 text-sm">
-              © {currentYear} Monger Gideon Tech. All rights reserved.
+              © {currentYear} All rights reserved Monger Gideon Technology.
             </div>
             
             <div className="text-gray-300 text-sm text-center md:text-right">
               <p>Email: hello@mongergideontechnology.name.ng</p>
               <p>WhatsApp: +2348130398167</p>
             </div>
-          </div>
-          
-          <div className="mt-4 text-xs text-gray-400 text-center">
-            This website meets WCAG AA accessibility standards.
           </div>
         </div>
       </div>

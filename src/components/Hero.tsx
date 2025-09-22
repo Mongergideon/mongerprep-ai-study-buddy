@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import phoneMockup from "@/assets/phone-mockup.png";
+import phoneMockup from "@/assets/phone-mockup-updated.png";
 import heroBackground from "@/assets/hero-background.png";
 
 const Hero = () => {
@@ -44,7 +44,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
               <Button 
                 size="lg"
-                onClick={() => scrollToSection('download')}
+                onClick={() => window.open('https://app.cbtmanager.mongergideontechnology.name.ng/', '_blank')}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-6"
               >
                 Download App

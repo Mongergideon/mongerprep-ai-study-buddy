@@ -41,7 +41,7 @@ const Header = () => {
           </nav>
           
           <Button 
-            onClick={() => scrollToSection('download')}
+            onClick={() => window.open('https://app.cbtmanager.mongergideontechnology.name.ng/', '_blank')}
             className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1"
           >
             Download App
