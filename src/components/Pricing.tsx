@@ -129,7 +129,7 @@ const Pricing = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
           {plans.map((plan, index) => {
             const IconComponent = plan.icon;
             const isPopular = plan.popular;
@@ -137,45 +137,45 @@ const Pricing = () => {
             return (
               <div 
                 key={index}
-                className={`group relative premium-card p-8 rounded-3xl transition-all duration-500 hover:-translate-y-2 animate-fade-in ${
+                className={`group relative premium-card p-6 md:p-8 rounded-3xl transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-2 animate-fade-in card-3d gpu-accelerated ${
                   isPopular 
-                    ? 'ring-2 ring-primary shadow-glow scale-110' 
+                    ? 'ring-2 ring-primary shadow-glow scale-105' 
                     : 'hover:shadow-glow'
                 }`}
               >
                 {isPopular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-gradient-hero text-primary-foreground px-6 py-2 rounded-full text-sm font-bold shadow-premium">
+                  <div className="absolute -top-3 md:-top-4 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-gradient-hero text-primary-foreground px-4 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-bold shadow-premium">
                       Most Popular
                     </div>
                   </div>
                 )}
 
-                <div className="text-center mb-8">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${plan.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-soft`}>
-                    <IconComponent className="w-8 h-8 text-white" />
+                <div className="text-center mb-6 md:mb-8">
+                  <div className={`w-12 md:w-16 h-12 md:h-16 bg-gradient-to-br ${plan.gradient} rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 shadow-soft gpu-accelerated`}>
+                    <IconComponent className="w-6 md:w-8 h-6 md:h-8 text-white" />
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
                     {plan.name}
                   </h3>
                   
-                  <p className="text-muted-foreground text-sm mb-4">
+                  <p className="text-muted-foreground text-xs md:text-sm mb-3 md:mb-4">
                     {plan.description}
                   </p>
                   
                   <div className="space-y-1">
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="text-4xl font-bold text-foreground">
+                      <span className="text-2xl md:text-4xl font-bold text-foreground">
                         {plan.price}
                       </span>
-                      <span className="text-muted-foreground">
+                      <span className="text-sm md:text-base text-muted-foreground">
                         /{plan.period}
                       </span>
                     </div>
                     
                     {plan.originalPrice && isYearly && (
-                      <div className="text-sm text-muted-foreground">
+                      <div className="text-xs md:text-sm text-muted-foreground">
                         <span className="line-through">{plan.originalPrice}</span>
                         <span className="text-green-600 ml-2 font-semibold">17% off</span>
                       </div>
@@ -183,11 +183,11 @@ const Pricing = () => {
                   </div>
                 </div>
 
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{feature}</span>
+                    <li key={featureIndex} className="flex items-start gap-2 md:gap-3">
+                      <Check className="w-4 md:w-5 h-4 md:h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-xs md:text-sm text-muted-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -195,7 +195,7 @@ const Pricing = () => {
                 <Button
                   variant={plan.buttonVariant}
                   onClick={() => window.open('https://app.cbtmanager.mongergideontechnology.name.ng/', '_blank')}
-                  className={`w-full py-6 rounded-2xl font-semibold transition-all duration-300 ${
+                  className={`w-full py-4 md:py-6 rounded-2xl font-semibold transition-all duration-300 hover:transform hover:scale-105 card-3d gpu-accelerated ${
                     isPopular
                       ? 'bg-gradient-hero hover:bg-gradient-premium text-primary-foreground shadow-premium hover:shadow-glow hover-glow'
                       : plan.buttonVariant === 'outline'
@@ -207,7 +207,7 @@ const Pricing = () => {
                 </Button>
 
                 {plan.name !== "Free Plan" && (
-                  <p className="text-xs text-muted-foreground text-center mt-4">
+                  <p className="text-xs text-muted-foreground text-center mt-3 md:mt-4">
                     3-day free trial included
                   </p>
                 )}

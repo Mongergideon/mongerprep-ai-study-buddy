@@ -8,33 +8,34 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full glass-effect z-50 border-b border-white/10">
-      <div className="container mx-auto px-4 py-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+    <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10 gpu-accelerated">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between py-3 md:py-4">
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
             <img 
               src={mongerPrepLogo} 
               alt="Mongerprep logo" 
-              className="h-12 w-auto transition-all duration-300 hover:scale-110"
+              className="h-10 md:h-16 w-auto transition-transform hover:scale-105"
             />
           </div>
           
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <button 
               onClick={() => scrollToSection('features')}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-all font-medium text-sm lg:text-base hover:transform hover:scale-105"
             >
               Features
             </button>
             <button 
               onClick={() => scrollToSection('pricing')}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-all font-medium text-sm lg:text-base hover:transform hover:scale-105"
             >
               Pricing
             </button>
             <button 
               onClick={() => scrollToSection('how-it-works')}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-all font-medium text-sm lg:text-base hover:transform hover:scale-105"
             >
               How it Works
             </button>
@@ -42,9 +43,9 @@ const Header = () => {
           
           <Button 
             onClick={() => window.open('https://app.cbtmanager.mongergideontechnology.name.ng/', '_blank')}
-            className="bg-gradient-hero hover:bg-gradient-premium text-primary-foreground shadow-premium hover:shadow-glow transition-all duration-300 hover:-translate-y-1 px-8 py-3 rounded-xl font-semibold hover-glow"
+            className="bg-gradient-hero hover:bg-gradient-premium text-primary-foreground shadow-soft hover:shadow-hover transition-all duration-200 hover:transform hover:scale-105 hover:-translate-y-1 font-semibold px-4 md:px-6 py-2 rounded-xl text-sm md:text-base gpu-accelerated"
           >
-            Download App
+            <span className="hidden sm:inline">Download </span>App
           </Button>
         </div>
       </div>

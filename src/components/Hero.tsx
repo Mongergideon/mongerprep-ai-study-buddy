@@ -27,8 +27,8 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDYwIDAgTCAwIDAgMCA2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
       </div>
 
-      <div className="container mx-auto px-4 py-32 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Content Column */}
           <div className="text-center lg:text-left space-y-8 animate-fade-in-up">
             {/* Premium Badge */}
@@ -39,35 +39,35 @@ const Hero = () => {
 
             {/* Main Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                <span className="block text-gradient animate-fade-in">Mongerprep</span>
-                <span className="block text-foreground/90 animate-fade-in delay-200">Your AI-Powered</span>
-                <span className="block text-foreground/90 animate-fade-in delay-400">Study Partner</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
+                <span className="block text-gradient animate-fade-in gpu-accelerated">Mongerprep</span>
+                <span className="block text-foreground/90 animate-fade-in delay-200 gpu-accelerated">Your AI-Powered</span>
+                <span className="block text-foreground/90 animate-fade-in delay-400 gpu-accelerated">Study Partner</span>
               </h1>
               
-              <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl animate-fade-in delay-600">
+              <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl animate-fade-in delay-600 gpu-accelerated">
                 Study offline. Learn with AI. Prepare for <span className="text-primary font-semibold">JAMB</span>, <span className="text-primary font-semibold">WAEC</span> & <span className="text-primary font-semibold">Post-UTME</span>—anytime, anywhere.
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start animate-fade-in delay-800">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center lg:justify-start animate-fade-in delay-800">
               <Button 
                 size="lg"
                 onClick={() => window.open('https://app.cbtmanager.mongergideontechnology.name.ng/', '_blank')}
-                className="group bg-gradient-hero hover:bg-gradient-premium text-primary-foreground shadow-premium hover:shadow-glow transition-all duration-500 hover:-translate-y-2 text-lg px-10 py-6 rounded-2xl font-bold hover-glow animate-glow-pulse"
+                className="group bg-gradient-hero hover:bg-gradient-premium text-primary-foreground shadow-premium hover:shadow-glow transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-2 text-base md:text-lg px-8 md:px-10 py-4 md:py-6 rounded-2xl font-bold hover-glow card-3d gpu-accelerated"
               >
                 Download App
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 md:w-5 h-4 md:h-5 ml-2 group-hover:translate-x-1 transition-transform gpu-accelerated" />
               </Button>
               
               <Button 
                 variant="outline" 
                 size="lg"
                 onClick={() => scrollToSection('features')}
-                className="group glass-effect border-white/30 text-foreground hover:text-primary hover:border-primary/50 shadow-glass hover:shadow-premium transition-all duration-500 hover:-translate-y-1 text-lg px-10 py-6 rounded-2xl font-semibold"
+                className="group glass-effect border-white/30 text-foreground hover:text-primary hover:border-primary/50 shadow-glass hover:shadow-premium transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-1 text-base md:text-lg px-8 md:px-10 py-4 md:py-6 rounded-2xl font-semibold card-3d gpu-accelerated"
               >
-                <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                <Play className="w-4 md:w-5 h-4 md:h-5 mr-2 group-hover:scale-110 transition-transform gpu-accelerated" />
                 See Features
               </Button>
             </div>
@@ -102,18 +102,18 @@ const Hero = () => {
           </div>
 
           {/* Phone Mockup Column */}
-          <div className="relative flex justify-center animate-slide-in-right">
+          <div className="relative flex justify-center animate-slide-in-right mt-8 lg:mt-0">
             {/* Phone Container with Premium Effects */}
             <div className="relative">
               {/* Glow Effect Behind Phone */}
-              <div className="absolute inset-0 bg-gradient-hero rounded-[3rem] opacity-20 blur-2xl scale-110 animate-glow-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-hero rounded-[2rem] md:rounded-[3rem] opacity-15 blur-xl md:blur-2xl scale-110 animate-glow-pulse gpu-accelerated"></div>
               
               {/* Premium Frame */}
-              <div className="relative premium-card rounded-[3rem] p-2 animate-float">
+              <div className="relative premium-card rounded-[2rem] md:rounded-[3rem] p-1 md:p-2 animate-float-3d card-3d">
                 <img 
                   src={phoneMockup} 
                   alt="Mongerprep app dashboard showing personalized study interface" 
-                  className="w-full max-w-sm mx-auto rounded-[2.5rem] shadow-premium"
+                  className="w-full max-w-xs md:max-w-sm mx-auto rounded-[1.5rem] md:rounded-[2.5rem] shadow-premium gpu-accelerated"
                 />
               </div>
 

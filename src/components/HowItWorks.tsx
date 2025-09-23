@@ -31,18 +31,18 @@ const HowItWorks = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12">
           {steps.map((step, index) => (
             <div key={index} className="text-center group">
               <div className="relative mb-6">
                 {/* Step Number */}
-                <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold z-10">
+                <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-7 md:w-8 h-7 md:h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs md:text-sm font-bold z-10 gpu-accelerated">
                   {index + 1}
                 </div>
                 
                 {/* Icon */}
-                <div className="mx-auto w-20 h-20 bg-gradient-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <step.icon className="w-10 h-10 text-accent-foreground" />
+                <div className="mx-auto w-16 md:w-20 h-16 md:h-20 bg-gradient-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 card-3d gpu-accelerated">
+                  <step.icon className="w-8 md:w-10 h-8 md:h-10 text-accent-foreground" />
                 </div>
                 
                 {/* Connector Line (hidden on last item) */}

@@ -44,11 +44,11 @@ const Testimonials = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-hover transition-all duration-300 hover:-translate-y-2 bg-card border-border"
+              className="group hover:shadow-hover transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-2 bg-card border-border card-3d gpu-accelerated"
             >
               <CardContent className="p-6">
                 {/* Stars */}

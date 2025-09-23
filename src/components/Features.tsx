@@ -108,30 +108,30 @@ const Features = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-20">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
               <div 
                 key={index}
-                className={`group premium-card p-8 rounded-3xl hover:shadow-glow transition-all duration-500 hover:-translate-y-2 animate-fade-in ${feature.delay}`}
+                className={`group premium-card p-6 md:p-8 rounded-3xl hover:shadow-glow transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-2 animate-fade-in card-3d gpu-accelerated ${feature.delay}`}
               >
                 {/* Icon with Gradient Background */}
-                <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-soft`}>
-                  <IconComponent className="w-8 h-8 text-white" />
+                <div className={`w-12 md:w-16 h-12 md:h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-soft gpu-accelerated`}>
+                  <IconComponent className="w-6 md:w-8 h-6 md:h-8 text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                <h3 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4 group-hover:text-primary transition-colors">
                   {feature.title}
                 </h3>
                 
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
 
                 {/* Hover Effect Line */}
-                <div className="w-0 h-1 bg-gradient-hero rounded-full mt-6 group-hover:w-12 transition-all duration-300"></div>
+                <div className="w-0 h-1 bg-gradient-hero rounded-full mt-4 md:mt-6 group-hover:w-12 transition-all duration-300 gpu-accelerated"></div>
               </div>
             );
           })}
@@ -139,31 +139,31 @@ const Features = () => {
 
         {/* Premium CTA Section */}
         <div className="text-center">
-          <div className="glass-effect p-12 rounded-3xl border border-white/20 shadow-premium max-w-4xl mx-auto animate-scale-in">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Shield className="w-8 h-8 text-primary" />
-              <Smartphone className="w-8 h-8 text-accent" />
-              <Sparkles className="w-8 h-8 text-primary" />
+          <div className="glass-effect p-8 md:p-12 rounded-3xl border border-white/20 shadow-premium max-w-4xl mx-auto animate-scale-in card-3d gpu-accelerated">
+            <div className="flex items-center justify-center gap-3 mb-4 md:mb-6">
+              <Shield className="w-6 md:w-8 h-6 md:h-8 text-primary" />
+              <Smartphone className="w-6 md:w-8 h-6 md:h-8 text-accent" />
+              <Sparkles className="w-6 md:w-8 h-6 md:h-8 text-primary" />
             </div>
             
-            <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 md:mb-4">
               Ready to Transform Your Study Experience?
             </h3>
             
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto">
               Join thousands of successful students who've already discovered the power of AI-driven exam preparation.
             </p>
             
             <Button
               size="lg"
               onClick={() => window.open('https://app.cbtmanager.mongergideontechnology.name.ng/', '_blank')}
-              className="group bg-gradient-hero hover:bg-gradient-premium text-primary-foreground shadow-premium hover:shadow-glow transition-all duration-500 hover:-translate-y-2 text-lg px-12 py-6 rounded-2xl font-bold hover-glow"
+              className="group bg-gradient-hero hover:bg-gradient-premium text-primary-foreground shadow-premium hover:shadow-glow transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-2 text-base md:text-lg px-8 md:px-12 py-4 md:py-6 rounded-2xl font-bold hover-glow card-3d gpu-accelerated"
             >
               Start Your Free Trial
-              <Sparkles className="w-5 h-5 ml-2 group-hover:rotate-12 transition-transform" />
+              <Sparkles className="w-4 md:w-5 h-4 md:h-5 ml-2 group-hover:rotate-12 transition-transform" />
             </Button>
             
-            <p className="text-sm text-muted-foreground mt-4">
+            <p className="text-xs md:text-sm text-muted-foreground mt-3 md:mt-4">
               No credit card required • 3-day free trial • Cancel anytime
             </p>
           </div>

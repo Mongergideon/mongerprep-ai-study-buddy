@@ -20,14 +20,14 @@ const CTASection = () => {
           Download Mongerprep today and start your 3-day free trial.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-6 md:mb-8">
           {/* App Download Button */}
           <Button 
             onClick={() => window.open('https://app.cbtmanager.mongergideontechnology.name.ng/', '_blank')}
             size="lg"
-            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 px-8 py-6 text-lg min-w-[200px]"
+            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-soft hover:shadow-hover transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-1 px-6 md:px-8 py-4 md:py-6 text-base md:text-lg min-w-[180px] md:min-w-[200px] card-3d gpu-accelerated"
           >
-            <Smartphone className="w-5 h-5 mr-2" />
+            <Smartphone className="w-4 md:w-5 h-4 md:h-5 mr-2" />
             Download App
           </Button>
           
@@ -36,9 +36,9 @@ const CTASection = () => {
             onClick={() => window.open('https://app.cbtmanager.mongergideontechnology.name.ng/', '_blank')}
             size="lg"
             variant="secondary"
-            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-soft hover:shadow-hover transition-all duration-300 hover:-translate-y-1 px-8 py-6 text-lg min-w-[200px]"
+            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-soft hover:shadow-hover transition-all duration-300 hover:transform hover:scale-105 hover:-translate-y-1 px-6 md:px-8 py-4 md:py-6 text-base md:text-lg min-w-[180px] md:min-w-[200px] card-3d gpu-accelerated"
           >
-            <Download className="w-5 h-5 mr-2" />
+            <Download className="w-4 md:w-5 h-4 md:h-5 mr-2" />
             Start Free Trial
           </Button>
         </div>

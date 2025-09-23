@@ -67,10 +67,10 @@
     --shadow-glass: 0 8px 32px rgba(255, 255, 255, 0.1);
     --shadow-glow: 0 0 40px rgba(91, 35, 51, 0.2);
     
-    /* Premium Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-premium: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Premium Animations - Optimized */
+    --transition-smooth: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+    --transition-premium: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: transform 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
@@ -122,11 +122,12 @@
     background: linear-gradient(135deg, hsl(var(--white-smoke)) 0%, hsl(var(--pure-white)) 100%);
   }
 
-  /* Premium Utility Classes */
+  /* Premium Utility Classes - Performance Optimized */
   .glass-effect {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    will-change: transform;
   }
 
   .text-gradient {
@@ -138,16 +139,55 @@
 
   .hover-glow {
     transition: var(--transition-premium);
+    will-change: transform, box-shadow;
   }
 
   .hover-glow:hover {
     box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
   }
 
   .premium-card {
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: var(--shadow-premium);
+    will-change: transform;
+  }
+
+  /* 3D Animation Utilities */
+  .card-3d {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .card-3d:hover {
+    transform: rotateX(5deg) rotateY(-5deg) translateY(-8px);
+  }
+
+  .float-3d {
+    animation: float3d 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  @keyframes float3d {
+    0%, 100% { transform: translate3d(0, 0px, 0) rotateY(0deg); }
+    50% { transform: translate3d(0, -10px, 20px) rotateY(2deg); }
+  }
+
+  /* Mobile Optimizations */
+  @media (max-width: 768px) {
+    .glass-effect {
+      backdrop-filter: blur(5px);
+    }
+    .premium-card {
+      backdrop-filter: blur(5px);
+    }
+  }
+
+  /* Hardware Acceleration */
+  .gpu-accelerated {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
   }
 }
