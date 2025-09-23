@@ -4,19 +4,28 @@ import mongerPrepLogo from "@/assets/mongerprep-logo.png";
 const Header = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      const headerHeight = 120; // Account for larger header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10 gpu-accelerated">
+    <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10 gpu-accelerated transform-gpu backdrop-blur-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between py-3 md:py-4">
+        <div className="flex items-center justify-between py-4 md:py-6">
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
               src={mongerPrepLogo} 
               alt="Mongerprep logo" 
-              className="h-10 md:h-16 w-auto transition-transform hover:scale-105"
+              className="h-20 md:h-24 lg:h-28 w-auto transition-transform hover:scale-105 gpu-accelerated"
             />
           </div>
           
